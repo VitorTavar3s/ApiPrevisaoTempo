@@ -64,16 +64,13 @@ public class ForecastServiceImplTest {
 
     @Test
     public void testGetForecastByCityName() {
-        // Mock input
         ForecastRequest request = new ForecastRequest();
         request.setCityName("Test City");
 
-        // Mock city entity
         City city = new City();
         city.setId(1L);
         city.setNome("Test City");
 
-        // Expectativa da chamada à API simulada
         String responseBody = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
                 "<city>" +
                 "<id>1</id>" +
@@ -90,10 +87,8 @@ public class ForecastServiceImplTest {
         mockServer.expect(requestTo("http://servicos.cptec.inpe.br/XML/cidade/1/previsao.xml"))
                 .andRespond(withSuccess(responseBody, MediaType.APPLICATION_XML));
 
-        // Chamada ao método do serviço
         CityResponse response = forecastService.getForecastByCityName(request);
 
-        // Verificações
         mockServer.verify(); // Verifica se todas as solicitações esperadas foram feitas
         assertEquals("Test City", response.getNome());
         assertEquals(1, response.getPrevisoes().size()); // Corrigido para verificar o tamanho da lista

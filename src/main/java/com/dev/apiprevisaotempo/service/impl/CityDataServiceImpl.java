@@ -1,6 +1,6 @@
 package com.dev.apiprevisaotempo.service.impl;
 
-import com.dev.apiprevisaotempo.dto.request.ForecastRequest;
+
 import com.dev.apiprevisaotempo.entity.City;
 import com.dev.apiprevisaotempo.repository.CityRepository;
 import com.dev.apiprevisaotempo.service.CityService;
@@ -8,21 +8,9 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import org.springframework.http.converter.xml.MappingJackson2XmlHttpMessageConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
-import java.io.StringReader;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -35,7 +23,7 @@ public class CityDataServiceImpl implements CityService {
     }
 
 
-    public void fetchAndSaveCities(ForecastRequest forecastRequest) {
+    /*public void fetchAndSaveCities(ForecastRequest forecastRequest) {
         String citiesUrl = "http://servicos.cptec.inpe.br/XML/listaCidades?city=" + forecastRequest ;
         RestTemplate restTemplate = new RestTemplate();
         String xmlResponse = restTemplate.getForObject(citiesUrl, String.class);
@@ -67,7 +55,7 @@ public class CityDataServiceImpl implements CityService {
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     @Override
     public void buscarCidades(String nomeCidade){

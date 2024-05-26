@@ -11,6 +11,7 @@ import com.dev.apiprevisaotempo.service.CityService;
 import com.dev.apiprevisaotempo.service.ForecastService;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.xml.MappingJackson2XmlHttpMessageConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
